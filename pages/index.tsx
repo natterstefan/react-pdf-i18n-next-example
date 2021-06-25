@@ -61,10 +61,11 @@ export default function Home() {
           </Link>
         </div>
 
-        <iframe
-          className={styles.pdf}
-          src={`//${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pdf?locale=${locale}`}
-        />
+        <div className={styles.pdf}>
+          <iframe
+            src={`//${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pdf?locale=${locale}`}
+          />
+        </div>
       </main>
 
       <footer className={styles.footer}>

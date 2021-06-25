@@ -67,6 +67,21 @@
 }
 
 .pdf {
+  height: 100%;
+  width: 100%;
+}
+
+.pdf iframe {
   height: 75vh;
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .pdf {
+    padding: 0 2rem;
+  }
 }
