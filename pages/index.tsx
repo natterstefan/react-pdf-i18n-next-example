@@ -50,7 +50,7 @@ export default function Home() {
 
         <iframe
           className={styles.pdf}
-          src={process.env.NEXT_PUBLIC_VERCEL_URL + '/api/pdf?locale=' + locale}
+          src={`//${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pdf?locale=${locale}`}
         />
       </main>
 
