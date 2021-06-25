@@ -19,8 +19,21 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://react-pdf.org/">react-pdf</a> with{' '}
-          <a href="https://www.npmjs.com/package/use-intl">use-intl</a>
+          <a
+            href="https://react-pdf.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            react-pdf
+          </a>{' '}
+          with{' '}
+          <a
+            href="https://www.npmjs.com/package/use-intl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            use-intl
+          </a>
         </h1>
 
         <div className={styles.lang}>
@@ -56,14 +69,11 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://twitter.com/natterstefan"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Created with 💛 by @natterstefan
         </a>
       </footer>
     </div>
