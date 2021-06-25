@@ -2,40 +2,51 @@
 import React from 'react'
 import { NextApiRequest, NextApiResponse } from 'next'
 import {
+  Document,
   Page,
   renderToStream,
-  Text,
   StyleSheet,
+  Text,
   View,
-  Document,
 } from '@react-pdf/renderer'
 
-import { IntlProvider, useIntl, useTranslations } from 'use-intl'
+import { IntlProvider, useTranslations } from 'use-intl'
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4',
+    padding: 24,
   },
   section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
+    flexDirection: 'row',
+    padding: '24px 0',
+  },
+  title: {
+    fontSize: 24,
   },
 })
 
-const App = () => {
+interface IProps {
+  locale: string
+}
+
+const App = ({ locale }: IProps) => {
   const t = useTranslations('App')
-  // const intl = useIntl();
 
   return (
-    <Document>
+    <Document
+      title="react-pdf with use-intl"
+      subject="react-pdf with use-intl"
+      author="Stefan Natter (@natterstefan)"
+      language={locale}
+    >
       <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text>{t('hello')}</Text>
+        <View style={[styles.section, styles.title]}>
+          <Text>{t('title')}</Text>
         </View>
         <View style={styles.section}>
-          <Text>{t('bye')}</Text>
+          <Text>
+            {t('hello')} - {t('bye')}
+          </Text>
         </View>
       </Page>
     </Document>
@@ -48,14 +59,16 @@ const App = () => {
 const messages = {
   de: {
     App: {
-      hello: 'Guten Tag',
+      title: 'react-pdf mit useIntl',
+      hello: 'Hallo',
       bye: 'Tschüss',
     },
   },
   en: {
     App: {
-      hello: 'Good Day',
-      bye: 'Bye',
+      title: 'react-pdf with useIntl',
+      hello: 'Hello',
+      bye: 'Goodbye',
     },
   },
 }
@@ -72,13 +85,12 @@ export default async function offerPdf(
     try {
       const pdfStream = await renderToStream(
         <IntlProvider messages={messages[locale]} locale="en">
-          <App />
+          <App locale={locale} />
         </IntlProvider>,
       )
 
       res.setHeader('Content-Type', 'application/pdf')
       pdfStream.pipe(res)
-
       pdfStream.on('end', () => console.log('Done streaming, response sent.'))
     } catch (error) {
       console.log('\n', error)
