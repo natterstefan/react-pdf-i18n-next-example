@@ -68,6 +68,21 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
+        <div className={styles.github}>
+          <a
+            href="https://github.com/natterstefan/react-pdf-i18n-next-example"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              width={30}
+              height={30}
+              src="/github.svg"
+              alt="Open https://github.com/natterstefan/react-pdf-i18n-next-example"
+            />
+          </a>
+        </div>
+
         <a
           href="https://twitter.com/natterstefan"
           target="_blank"
