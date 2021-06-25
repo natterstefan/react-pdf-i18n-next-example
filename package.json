@@ -1,5 +1,7 @@
 {
   "name": "react-pdf-i18n-next-example",
+  "author": "Stefan Natter <https://natterstefan.me>",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "scripts": {

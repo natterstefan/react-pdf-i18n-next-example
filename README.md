@@ -1,6 +1,6 @@
 # react-pdf-i18n-next-example
 
-This is a [Next.js](https://nextjs.org/) illustrating how to use
+This is a [Next.js](https://nextjs.org/) app illustrating how to use
 [use-intl](https://www.npmjs.com/package/use-intl) to render i18n-ready PDFs
 with <https://react-pdf.org/>.
 
@@ -31,6 +31,8 @@ from the creators of Next.js.
 Check out our
 [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
 details.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnatterstefan%2Freact-pdf-i18n-next-example)
 
 ## License
 
